@@ -72,6 +72,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `apm install` again accepts `skills:` subsets from Git collections with nested `skills/<name>/SKILL.md` files but no root manifest or skill, without a `path:` workaround. (#2891)
 - Registry `apm outdated` now separates installed `Current`, constraint-bound `Wanted`, and published `Latest`, so exact pins no longer hide newer releases. It leaves legacy lockfiles unchanged, while `apm update` continues respecting manifest constraints. (#2874)
 
+### Fixed
+
+- The Unix installer now declares the prebuilt Linux glibc 2.38 minimum and routes older systems to the existing eligible Python/pip fallback before downloading an incompatible binary, with matching recovery guidance. (#2931)
+
 ### Security
 
 - The shared gh-aw APM pack job now declares `contents: read` (previously `permissions: {}`), the minimum the explicit built-in-token path needs. No write scope is added, and the token is not forwarded to restore or agent jobs. (#2706)
