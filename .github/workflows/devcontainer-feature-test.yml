@@ -21,10 +21,6 @@ on:
   merge_group:
     branches: [ main ]
     types: [ checks_requested ]
-  schedule:
-    # Nightly full matrix at 06:00 UTC catches base-image drift (glibc, musl,
-    # apt/apk/dnf) within 24h independent of PR activity.
-    - cron: '0 6 * * *'
   workflow_dispatch:
 
 permissions:
