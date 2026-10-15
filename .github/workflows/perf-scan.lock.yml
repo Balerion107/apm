@@ -52,8 +52,6 @@
 
 name: "Daily Performance Scanner"
 on:
-  schedule:
-    - cron: "0 1 * * *"
   workflow_dispatch:
     inputs:
       aw_context:
